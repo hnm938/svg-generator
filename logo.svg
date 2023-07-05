@@ -1,8 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
       
-    <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="171.213,50 128.787,50 100,78.787 100,121.213 128.787,150 171.213,150 200,121.213 200,78.787" fill="red" />
-      <text x="150" y="100" fill="white" text-anchor="middle" dominant-baseline="middle" font-size="2rem" font-family="Impact">STOP</text>
-    </svg>
-  
+      <rect x="50" y="50" width="200" height="100" fill="red" /><text x="150" y="100" fill="white" text-anchor="middle" font-size="2rem" dominant-baseline="middle" font-family="Impact">stop</text>
+    
     </svg>

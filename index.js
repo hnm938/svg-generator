@@ -2,40 +2,38 @@
 
 import fs from "fs";
 import inquirer from "inquirer";
-import {
-  generateCircle,
-  generateRectangle,
-  generateTriangle,
-  generatePolygon,
-} from "./lib/shapes.js";
+import { Circle, Rectangle, Triangle, Polygon } from "./lib/shapes.js";
 
-// Function to generate the SVG code
 function generateSVG(text, textColor, shape, shapeColor, points, font) {
   let shapeCode = "";
 
   switch (shape) {
     case "circle":
-      shapeCode = generateCircle(50, shapeColor, text, font);
+      const circle = new Circle(50, shapeColor, text, font);
+      shapeCode = circle.generateShape();
       break;
     case "rectangle":
-      shapeCode = generateRectangle(200, 100, shapeColor, text, font);
+      const rectangle = new Rectangle(200, 100, shapeColor, text, font);
+      shapeCode = rectangle.generateShape();
       break;
     case "triangle":
-      shapeCode = generateTriangle(100, shapeColor, text, font);
+      const triangle = new Triangle(100, shapeColor, text, font);
+      shapeCode = triangle.generateShape();
       break;
     case "polygon":
-      shapeCode = generatePolygon(points, shapeColor, text, font);
+      const polygon = new Polygon(points, shapeColor, text, font);
+      shapeCode = polygon.generateShape();
       break;
   }
 
   const svgTemplate = `
     <svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
       ${shapeCode}
-    </svg>
-  `;
+    </svg>`;
 
-  return svgTemplate.trim();
+  return svgTemplate;
 }
+
 
 // Prompt the user for input using inquirer
 inquirer
